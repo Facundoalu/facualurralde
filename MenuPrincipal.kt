@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.alumaster.androidalu.primerapp.CalcuAppActivity
 import com.alumaster.androidalu.primerapp.PrimerAppActivity
+import com.alumaster.androidalu.superHeroApp.SuperHeroListActivity
 import com.alumaster.androidalu.toDoApp.ToDoActivity
 
 class MenuPrincipal : AppCompatActivity() {
@@ -21,6 +22,9 @@ class MenuPrincipal : AppCompatActivity() {
 
         val btnCalcu = findViewById<Button>(R.id.btnCalculador)
         btnCalcu.setOnClickListener { navigateToCalcuAppActivity() }
+
+        val btnSuperHero = findViewById<Button>(R.id.btnSuperHero)
+        btnSuperHero.setOnClickListener { navigatetoSuperHeroApp() }
 
 
     }
@@ -38,6 +42,11 @@ class MenuPrincipal : AppCompatActivity() {
     fun navigateToSaludo() {
 
         val intent = Intent(this, PrimerAppActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun navigatetoSuperHeroApp() {
+        val intent = Intent(this, SuperHeroListActivity::class.java)
         startActivity(intent)
     }
 }
